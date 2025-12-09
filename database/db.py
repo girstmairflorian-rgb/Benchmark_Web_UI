@@ -26,3 +26,10 @@ def save_result(algorithm, benchmark, upper_limit, num_processes, execution_time
                     (algorithm, benchmark_method, upper_limit, num_processes, execution_time)
                     VALUES (?, ?, ?, ?, ?);
                     """, (algorithm, benchmark, upper_limit, num_processes, execution_time))
+
+def get_all_results():
+    with sqlite3.connect(DB_PATH) as conn:
+        cur = conn.cursor()
+        cur.execute("SELECT * FROM benchmark_results ORDER BY id DESC")
+        results = cur.fetchall()
+        return results

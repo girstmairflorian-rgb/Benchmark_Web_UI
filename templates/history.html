@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<head>
+    <title>Benchmark History</title>
+</head>
+<body>
+    <h1>Benchmark History</h1>
+    <p><a href="/">Run a New Benchmark</a></p>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Algorithm</th>
+                <th>Method</th>
+                <th>Upper Limit</th>
+                <th>Processes</th>
+                <th>Time (s)</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        {% for row in results %}
+        <tr>
+            <td>{{ row[0] }}</td> <td>{{ row[1] }}</td> <td>{{ row[2] }}</td> <td>{{ row[3] }}</td> <td>{{ row[4] }}</td> <td>{{ row[5] }}</td> </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

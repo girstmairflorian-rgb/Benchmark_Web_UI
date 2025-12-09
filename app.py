@@ -1,7 +1,7 @@
 from flask import Flask, request, render_template
 from time import perf_counter
 from benchmarks import multiprocessing_functions, test_algorithms
-from database.db import init_db, save_result
+from database.db import init_db, save_result, get_all_results
 app = Flask(__name__)
 init_db()
 
@@ -49,6 +49,11 @@ def results():
         num_processes=num_processes,
         elapsed_time=elapsed_time,
     )
+
+@app.route("/history", methods=["GET"])
+def history():
+    all_benchmarks = get_all_results()
+    return render_template("history.html", results=all_benchmarks)
 
 if __name__ == "__main__":
     app.run(debug=True)
