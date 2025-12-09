@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Compute-Intensive Benchmarking Suite</h1>
+
+<p>Choose your parameters:</p>
+
+<form action="/results" method="POST">
+
+    <!-- Algorithm selector -->
+    <label for="algorithm">Algorithm:</label>
+    <select name="algorithm" id="algorithm">
+        <option value="checkPrime">Prime Checker</option>
+        <option value="fibonacci">Fibonacci</option>
+    </select>
+    <br><br>
+
+    <!-- Benchmark method selector -->
+    <label for="benchmark">Benchmark method:</label>
+    <select name="benchmark" id="benchmark">
+        <option value="poolApply">pool.apply()</option>
+        <option value="poolApplyAsync">pool.apply_async()</option>
+        <option value="poolApplyAsyncChunked">pool.apply_async() (chunked)</option>
+        <option value="poolMap">pool.map()</option>
+        <option value="singleProcessLoop">Single process loop</option>
+    </select>
+    <br><br>
+
+    <!-- Upper limit -->
+    <label for="upperLimit">Upper limit of range:</label>
+    <input type="number" id="upperLimit" name="upperLimit" placeholder="e.g. 100000" required>
+    <br><br>
+
+    <!-- Number of processes -->
+    <label for="numProcesses">Number of processes:</label>
+    <input type="number" id="numProcesses" name="numProcesses" placeholder="e.g. 4" required>
+    <br><br>
+
+    <input type="submit" value="Run Benchmark">
+
+</form>
+
+</body>
+</html>
