@@ -1,7 +1,9 @@
 from flask import Flask, request, render_template
 from time import perf_counter
 from benchmarks import multiprocessing_functions, test_algorithms
+from database.db import init_db, save_result
 app = Flask(__name__)
+init_db()
 
 ALGORITHMS = {
     "primeChecker": test_algorithms.check_if_prime,
@@ -36,6 +38,8 @@ def results():
     end = perf_counter()
 
     elapsed_time = round((end - start), 5)
+
+    save_result(algorithm, benchmark, upper_limit, num_processes, elapsed_time)
 
     return render_template(
         "results.html",
