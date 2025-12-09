@@ -59,6 +59,12 @@ http://127.0.0.1:5000
 
 You will see the benchmark configuration form.
 
+## Screenshots
+
+![alt text](https://github.com/girstmairflorian-rgb/Benchmark_Web_UI/blob/master/images/screenshot-app.png?raw=true)
+![alt text](https://github.com/girstmairflorian-rgb/Benchmark_Web_UI/blob/master/images/screenshot-results.png?raw=true)
+![alt text](https://github.com/girstmairflorian-rgb/Benchmark_Web_UI/blob/master/images/screenshot-history.png?raw=true)
+
 ## Database
 
 All benchmark runs are stored in:
