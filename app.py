@@ -37,12 +37,13 @@ def results():
 
     elapsed_time = round((end - start), 5)
 
-    return (
-        f"Algorithm: {algorithm}<br>"
-        f"Benchmark: {benchmark}<br>"
-        f"Upper Limit: {upper_limit}<br>"
-        f"Processes: {num_processes}<br>"
-        f"Elapsed time: {elapsed_time}<br>"
+    return render_template(
+        "results.html",
+        algorithm=algorithm,
+        benchmark=benchmark,
+        upper_limit=upper_limit,
+        num_processes=num_processes,
+        elapsed_time=elapsed_time,
     )
 
 if __name__ == "__main__":
